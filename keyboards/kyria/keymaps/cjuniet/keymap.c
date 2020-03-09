@@ -5,29 +5,29 @@ enum layers {
     _COLEMAK = 0,
     _SYMBOLS,
     _NUMBERS,
-    _SPECIALS
+    _SPECIAL
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT(
-        KC_ESC, KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_BSLS,
+        KC_GESC, KC_Q, KC_W, KC_F, KC_P, KC_G, KC_J, KC_L, KC_U, KC_Y, KC_SCLN, KC_BSLS,
         LCTL_T(KC_BSPC), KC_A, KC_R, KC_S, KC_T, KC_D, KC_H, KC_N, KC_E, KC_I, KC_O, KC_QUOT,
-        LSFT_T(KC_DEL), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_LAPO, LGUI_T(KC_LBRC), RGUI_T(KC_RBRC), KC_RAPC, KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_MINS,
-        KC_TAB, KC_LGUI, TT(_SYMBOLS), LSFT_T(KC_SPC), LCTL_T(KC_ENT), RCTL_T(KC_ENT), RSFT_T(KC_SPC), TT(_NUMBERS), KC_RGUI, KC_LEAD),
+        KC_LEAD, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_LCPO, LGUI_T(KC_LBRC), RGUI_T(KC_RBRC), KC_RCPC, KC_K, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_MINS,
+        KC_LEFT, KC_RGHT, TT(_SYMBOLS), LSFT_T(KC_SPC), LALT_T(KC_BSPC), RALT_T(KC_TAB), RSFT_T(KC_ENT), TT(_NUMBERS), KC_UP, KC_DOWN),
     [_SYMBOLS] = LAYOUT(
-        KC_TRNS, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
-        KC_TRNS, KC_MPLY, KC_MS_L, KC_MS_U, KC_MS_R, KC_WH_U, KC_PGUP, KC_LEFT, KC_UP, KC_RGHT, KC_VOLU, KC_GRV,
-        KC_TRNS, KC_MUTE, KC_BTN1, KC_MS_D, KC_BTN2, KC_WH_D, KC_LT, KC_TRNS, KC_TRNS, KC_GT, KC_PGDN, KC_HOME, KC_DOWN, KC_END, KC_VOLD, KC_EQL,
+        KC_TRNS, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_GRV,
+        KC_TRNS, KC_VOLU, KC_MS_L, KC_MS_U, KC_MS_R, KC_WH_U, KC_PGUP, KC_LEFT, KC_UP, KC_RGHT, KC_LCBR, KC_RSFT,
+        KC_TRNS, KC_VOLD, KC_BTN1, KC_MS_D, KC_BTN2, KC_WH_D, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGDN, KC_HOME, KC_DOWN, KC_END, KC_RCBR, KC_EQL,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
     [_NUMBERS] = LAYOUT(
-        KC_TRNS, KC_MNXT, KC_F7, KC_F8, KC_F9, KC_F10, KC_PGUP, KC_P7, KC_P8, KC_P9, KC_PPLS, KC_PMNS,
-        KC_TRNS, KC_MPLY, KC_F4, KC_F5, KC_F6, KC_F11, KC_TAB, KC_P4, KC_P5, KC_P6, KC_PAST, KC_PSLS,
-        KC_TRNS, KC_MPRV, KC_F1, KC_F2, KC_F3, KC_F12, KC_LPRN, KC_LT, KC_GT, KC_RPRN, KC_PGDN, KC_P1, KC_P2, KC_P3, KC_EQL, KC_PENT,
-        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_P0, KC_PDOT),
-    [_SPECIALS] = LAYOUT(
+        KC_TRNS, KC_MNXT, KC_F7, KC_F8, KC_F9, KC_F10, KC_PGUP, KC_P7, KC_P8, KC_P9, KC_PPLS, KC_PAST,
+        KC_TRNS, KC_MPLY, KC_F4, KC_F5, KC_F6, KC_F11, KC_TAB, KC_P4, KC_P5, KC_P6, KC_PMNS, KC_PSLS,
+        KC_TRNS, KC_MPRV, KC_F1, KC_F2, KC_F3, KC_F12, KC_LPRN, KC_LT, KC_GT, KC_RPRN, KC_PGDN, KC_P1, KC_P2, KC_P3, KC_PENT, KC_EQL,
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_LCBR, KC_LBRC, KC_RBRC, KC_RCBR, KC_TRNS, KC_P0, KC_PDOT),
+    [_SPECIAL] = LAYOUT(
         KC_TRNS, KC_NLCK, KC_CAPS, KC_SLCK, KC_LANG1, KC_LANG2, KC_TRNS, KC_PSCR, KC_SLCK, KC_PAUS, KC_TRNS, KC_TRNS,
         KC_TRNS, RGB_TOG, RGB_SAI, RGB_HUI, RGB_VAI, RGB_MOD, KC_TRNS, KC_INS, KC_HOME, KC_PGUP, KC_TRNS, KC_TRNS,
-        KC_TRNS, KC_NO, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_END, KC_PGDN, KC_TRNS, KC_TRNS,
+        KC_TRNS, KC_MUTE, RGB_SAD, RGB_HUD, RGB_VAD, RGB_RMOD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_END, KC_PGDN, KC_TRNS, KC_TRNS,
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 };
 
@@ -41,7 +41,7 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _SYMBOLS, _NUMBERS, _SPECIALS);
+    return update_tri_layer_state(state, _SYMBOLS, _NUMBERS, _SPECIAL);
 }
 
 void matrix_scan_user(void) {
@@ -50,18 +50,23 @@ void matrix_scan_user(void) {
         leader_end();
 
         // Lock screen (macOS)
-        SEQ_ONE_KEY(KC_ESC) {
+        SEQ_ONE_KEY(KC_GESC) {
             tap_code16(LCTL(LGUI(KC_Q)));
-        }
-
-        // Escape-Shift-Z-Z (VIM)
-        SEQ_ONE_KEY(KC_Z) {
-            SEND_STRING(SS_TAP(X_ESC) SS_LSFT("zz"));
         }
 
         // Dead grave accent (macOS)
         SEQ_ONE_KEY(KC_E) {
             tap_code16(LALT(KC_GRAVE));
+        }
+
+        // Escape-Shift-Z-Q (VIM)
+        SEQ_ONE_KEY(KC_Q) {
+            SEND_STRING(SS_TAP(X_ESC) SS_LSFT("zq"));
+        }
+
+        // Escape-Shift-Z-Z (VIM)
+        SEQ_ONE_KEY(KC_Z) {
+            SEND_STRING(SS_TAP(X_ESC) SS_LSFT("zz"));
         }
     }
 }
@@ -108,7 +113,7 @@ static void render_status(void) {
         case _NUMBERS:
             oled_write_P(PSTR("Numbers"), false);
             break;
-        case _SPECIALS:
+        case _SPECIAL:
             oled_write_P(PSTR("Special"), false);
             break;
         default:
