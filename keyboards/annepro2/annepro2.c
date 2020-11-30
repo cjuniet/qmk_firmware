@@ -113,12 +113,11 @@ bool OVERRIDE process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 return false;
 
             case KC_AP_LED_OFF:
-                annepro2LedPrevProfile();
                 annepro2LedDisable();
                 break;
 
             case KC_AP_LED_ON:
-                annepro2LedNextProfile();
+                annepro2LedSetProfile(2);
                 annepro2LedEnable();
                 break;
 
